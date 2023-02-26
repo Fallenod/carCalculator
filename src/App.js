@@ -1,58 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import Calculator from "./view/Calculator/Calculator";
+import { GlobalStyle } from "./styles/global-styles";
+import FontStyles from "./styles/font-styles";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Main>
+      <Header>Рассчитайте стоимость автомобиля в&nbsp;лизинг</Header>
+      <Calculator />
+      <GlobalStyle />
+      <FontStyles />
+    </Main>
   );
 }
 
-export default App;
+const Header = styled.h1`
+  font-family: "Nekst";
+  font-weight: 900;
+  font-size: 3.38rem;
+  line-height: 90%;
+  align-self: flex-start;
+  max-width: 47.06rem;
+  margin: 0;
+  @media screen and (max-width: 768px) {
+    font-size: 2.125rem;
+  }
+`;
+const Main = styled.main`
+  display: flex;
+  gap: 31px;
+  max-width: 1440px;
+  padding: 0 45px;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @media screen and (max-width: 1120px) {
+    padding: 0 36px;
+    margin-top: 3.5625rem;
+    margin-bottom: 9.75rem;
+    height: 100%;
+    min-height: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 0 20px;
+    margin-top: 2.75rem;
+    margin-bottom: 4rem;
+    height: 100%;
+    min-height: 100%;
+  }
+`;
